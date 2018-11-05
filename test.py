@@ -1,7 +1,11 @@
 from flask import Flask, render_template, request, g, session, jsonify, json
+#  数据模型
 from models import *
+
 from exts import db
+# 配置文件
 import config
+# 操作函数
 from inital import inital_admin
 from functions import check_user, clear_session, data_modify, checked, list_data, list_to_dict
 
