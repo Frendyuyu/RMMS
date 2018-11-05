@@ -3,6 +3,8 @@ from flask import Flask, render_template, request, g, session
 from models import *
 # 配置文件
 import config
+
+
 from exts import db
 # 操作函数
 from functions import check_user
