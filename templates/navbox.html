@@ -1,0 +1,113 @@
+{% block Nav %}
+    <div class="container-fluid">
+    <div class="row" >
+        <div class="col-2" style="height: 100%;">
+            <div class="navMenubox" style="height:100%;">
+                <div id="slimtest1">
+                    <div class="navMenu-top">
+                        <div id="mini">
+                            <div class="card bg-dark">
+                                <div class="card-header text-md-center">
+                                    用户信息</div>
+                                <div class="card-body">
+                                    {% if session['name']  %}
+                                        <div>当前用户名:{{ session['name'] }}</div>
+                                        <div class="pull-right">
+                                            <a class="btn btn-link" href="/logout/">退出</a>
+                                            <a class="btn btn-link" href="/modify/">改密码</a>
+                                        </div>
+                                    {% else %}
+                                        <div class="alert-info text-center">
+                                            <a href="/login/"><h9>请去登录</h9></a>
+                                        </div>
+                                    {% endif %}</div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="navMenu">
+                    <li> <a href="javascript:;" class="afinve"> <i class="icon_1"></i> <span class="">资料管理</span> <span class="arrow"></span> </a>
+                        <ul class="sub-menu">
+                            <li><a href="/login"><span>用户登录</span></a></li>
+                            <li><a href="javascript:;"><span>角色管理</span></a></li>
+                            <li><a href="javascript:;"><span>权限管理</span></a></li>
+                            <li><a href="javascript:;"><span>我的任务</span></a></li>
+                            <li > <a href="javascript:;" class="afinve"><span>个人信息</span><span class="arrow"></span></a>
+                                <ul class="sub-menu">
+                                    <li><a href="javascript:;" ><span>我的个人资料</span></a></li>
+                                    <li><a href="/modify/"><span>修改密码</span></a></li>
+                                    <li><a href="javascript:;"><span>我的收件箱</span></a></li>
+                                    <li><a href="javascript:;"><span>我的任务</span></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li > <a href="javascript:;" class="afinve"> <i class="icon_2"></i> <span class="nav-text">网站功能</span> <span class="arrow"></span> </a>
+                        <ul class="sub-menu">
+                            <li><a href="/" ><span>首页</span></a></li>
+                            <li><a href="/list/"><span>列表</span></a></li>
+                            <li><a href="javascript:;"><span>分类管理</span></a></li>
+                            <li><a href="javascript:;"><span>系统日志</span></a></li>
+                        </ul>
+                    </li>
+                    <li > <a href="javascript:;" class="afinve"> <i class="icon_2"></i> <span class="nav-text">网站配置</span> <span class="arrow"></span> </a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:;" ><span>网站设置</span></a></li>
+                            <li><a href="javascript:;"><span>友情链接</span></a></li>
+                            <li><a href="javascript:;"><span>分类管理</span></a></li>
+                            <li><a href="javascript:;"><span>系统日志</span></a></li>
+                        </ul>
+                    </li>
+                    <li > <a href="javascript:;" class="afinve"> <i class="icon_3"></i> <span class="nav-text">系统管理</span> <span class="arrow"></span> </a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:;"  class="afinve"><span>用户管理</span></a></li>
+                            <li><a href="javascript:;"><span>角色管理</span></a></li>
+                            <li><a href="javascript:;"><span>系统参数</span></a></li>
+                        </ul>
+                    </li>
+                    <li > <a href="javascript:;" class="afinve"> <i class="icon_3"></i> <span class="nav-text">统计报表</span> <span class="arrow"></span> </a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:;"  class="afinve"><span>发运表</span></a></li>
+                            <li><a href="javascript:;"><span>发运结算表</span></a></li>
+                            <li><a href="javascript:;"><span>自营车表</span></a></li>
+                            <li><a href="javascript:;"><span>导入发运报表</span></a></li>
+                            <li> <a href="javascript:;" class="afinve"><span>打印</span><span class="arrow"></span></a>
+                                <ul class="sub-menu">
+                                    <li><a href="javascript:;" ><span>发运结算表</span></a></li>
+                                    <li><a href="javascript:;"><span>应收发运单</span></a></li>
+                                    <li><a href="javascript:;"><span>自营车</span></a></li>
+                                    <li><a href="javascript:;"><span>应付发运单</span></a></li>
+                                </ul>
+                            </li>
+          <li > <a href="javascript:;" class="afinve"><span>数据查询</span><span class="arrow"></span></a>
+            <ul class="sub-menu">
+              <li><a href="javascript:;" ><span>发运单查询</span></a></li>
+              <li><a href="javascript:;"><span>自营车查询</span></a></li>
+              <li > <a href="javascript:;" class="afinve"><span>报账明细</span><span class="arrow"></span></a>
+                <ul class="sub-menu">
+                  <li><a href="javascript:;" ><span>报账明细1</span></a></li>
+                  <li><a href="javascript:;"><span>报账明细1</span></a></li>
+                  <li><a href="javascript:;"><span>报账明细1</span></a></li>
+                  <li><a href="javascript:;"><span>报账明细1</span></a></li>
+                  <li > <a href="javascript:;" class="afinve"><span>自营车汇总表</span><span class="arrow"></span></a>
+                    <ul class="sub-menu">
+                      <li><a href="javascript:;" ><span>自营车汇总表1</span></a></li>
+                      <li><a href="javascript:;"><span>自营车汇总表2</span></a></li>
+                      <li><a href="javascript:;"><span>自营车汇总表4</span></a></li>
+                      <li><a href="javascript:;"><span>自营车汇总表3</span></a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+                </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-10">{% block main %}{% endblock %}</div>
+    </div>
+</div>
+{% endblock %}

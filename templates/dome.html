@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dome2</title>
+</head>
+<body>
+    <table>
+    <tablehead>
+        <tr>
+            <th>ID</th>
+            <TH>NAME</TH>
+            <TH>TYPE</TH>
+        </tr>
+    </tablehead>
+    <tablebody>
+        {% for i in list_temp %}
+        <tr>
+            <th>{{ i.mater_id }}</th>
+            <th>{{ i.name }}</th>
+            <th>{{ i.mate_type }}</th>
+        </tr>
+        {% endfor %}
+    </tablebody>
+    </table>
+
+</body>
+</html>

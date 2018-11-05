@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}修改{% endblock %}
+
+{% block main %}
+        {% if session['name']  %}
+            <div class="card" style="width: 60%;height: 50%;left: 20%;top: 10%;">
+                <div class="card-header text-md-center">
+                      <h5>修改密码</h5>
+                </div>
+                <div class="card-body  align-self-md-center align-items-md-center">
+                    {# 修改密码表单   START #}
+                    <div class="align-self-md-center">
+                            <form class="align-items-md-center " action="/modify/" method="post">
+                                    <div class="form-group ">
+                                        <div class="form-inline align-items-md-center" >
+                                            <label for="disabledTextInput" >用户名:</label>
+                                            <input disabled type="text" name="user" id="disabledTextInput" class="form-control "  value="{{ session['name'] }}">
+                                        </div>
+                                        {% if g.user_messages %}
+                                        <div class="align-self-md-center">
+                                            <label  class="alert alert-warning align-self-md-center"></label>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-inline">
+                                            <label >原密码:</label>
+                                            <input type="password" name="password" class="form-control" placeholder="Password">
+                                        </div>
+                                        {% if g.pwd_messages %}
+                                            <div class="align-self-md-center">
+                                                <label  class="alert alert-warning align-self-md-center">{{ g.pwd_messages }}</label>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-inline">
+                                        <label >新密码:</label>
+                                        <input type="text" name="content" class="form-control" placeholder="New Password">
+                                    </div>
+                                        <div class="align-self-md-center">
+                                            {% if g.pwd_new_messages %}
+                                                <label  class="alert alert-warning align-self-md-center">{{ g.pwd_new_messages }}</label>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="align-items-md-baseline text-center" >
+                                            <button type="reset" class="btn btn-primary ">重置</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <button type="submit" class="btn btn-primary ">提交</button>
+                                        </div>
+                                    </div>
+                            </form>
+                    </div>
+                    {# 修改密码表单   END #}
+                </div>
+            </div>
+        {% else %}
+            <div class="card" style="width: 60%;height: 50%;left: 20%;top: 10%;">
+                <div class="card-header text-md-center">
+                      <h5>错误</h5>
+                  </div>
+                <div class="card-body">
+                    <div class="alert alert-info text-center ">
+                        <h5>你还可以做</h5>
+                        <div class="pull-right">
+                            <a class="btn btn-link" href="/login/">登录</a>
+                            <a class="btn btn-link" href="javascript:;" onClick="javascript:history.back(-1);">返后</a>
+                        </div>
+                    </div>
+                 </div>
+                <div class="card-footer">
+                    <div class="alert alert-dark text-center">
+                    <h9>你还没有登录，请你登录后再重试!</h9>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+{% endblock %}

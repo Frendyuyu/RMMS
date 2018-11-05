@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}登陆{% endblock %}
+
+{% block main %}
+    <div class="card" style="width: 60%;height: 50%;left: 20%;top: 10%;">
+        <div class="card-header text-center">
+            <h5>用户登录</h5>
+        </div>
+        {% if session['name']  %}
+            <div class="card-body">
+                {% if g.state  %}
+                    <div class="alert alert-success text-center">
+                        <h5>{{ g.state }}</h5>
+                    </div>
+                {% else %}
+                    <div class="alert alert-success text-center ">
+                        <h5>{{ session['name']  }}你也已经登录过了</h5>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="card-footer">
+                {% if g.messages  %}
+                    <div class="alert alert-dark text-center">
+                        <h9>{{ g.messages }}</h9>
+                    </div>
+                {% else %}
+                    <div class="alert alert-dark text-center">
+                    <h9>成功登后无需再次登录</h9>
+                    </div>
+                {% endif %}
+            </div>
+        {% else %}
+            <div class="align-self-md-center ">
+                <form class="align-items-md-center" action="/login/" method="post">
+                    <br>
+                    <div class="form-group">
+                        <div class="form-inline align-items-md-center">
+                            <label >用户:</label>
+                            <input type="text" name="user" class="form-control"  placeholder="Username">
+                        </div>
+                        {% if g.user_messages %}
+                            <label  class="alert alert-warning align-self-md-center">{{ g.user_messages}}</label>
+                        {% endif %}
+
+                    </div>
+                    <div class="form-group">
+                        <div class="form-inline align-items-md-center">
+                            <label >密码:</label>
+                            <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        {% if g.pwd_messages %}
+                            <label  class="alert alert-warning align-self-md-center">{{ g.pwd_messages }}</label>
+                        {% endif %}
+                    </div>
+                    <div class="align-items-md-baseline text-center" >
+                        <button type="reset" class="btn btn-primary ">重置</button>
+                        <button type="submit" class="btn btn-primary ">提交</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        {% endif %}
+{% endblock %}
